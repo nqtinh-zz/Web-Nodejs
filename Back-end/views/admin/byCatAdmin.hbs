@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/imgs/logo.png" type="image/png" sizes="8x8">
+    <title>Admin</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="../assets_admin/css/normalize.css">
+    <link rel="stylesheet" href="../assets_admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets_admin/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="../assets_admin/scss/style.css">
+    <link href="../assets_admin/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+
+
+    <!--  Main handlebar css-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+		<!-- 	<link type="text/css" rel="stylesheet" href="css/bootstrap4.css"/> -->
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="../assets/css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="../assets/css/style1.css">
+		<link type="text/css" rel="stylesheet" href="../assets/css/style-dropdown.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+    <aside id="left-panel" class="left-panel" style="background-color:#e7e7e7">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header" style="background-color:#e7e7e7">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/home" >
+                    <img src="/imgs/logo.png" alt="Logo">
+                </a>
+                <a class="navbar-brand hidden" href="/home" >
+                    <img src="/imgs/logo.png" alt="Logo">
+                </a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse" style="background-color:#e7e7e7">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/admin/dashboard" >
+                            <i class="menu-icon fa fa-home" style="color:black"></i><span style="color:black ;font-weight: bold">Dashboard </span></a>
+                    </li>
+                    <h3 class="menu-title">Quản lý</h3>
+                    <!-- /.menu-title -->
+                    <li>
+                        <a href="/admin/products">
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Sản phẩm </span> </a>
+                    </li>
+                    <li>
+                        <a href="/admin/producers">
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Nhà sản xuất</span> </a>
+                    </li>
+                    <li>
+                        <a href="/admin/categories">
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Loại sản phẩm</span> </a>
+                    </li>
+
+                    <h3 class="menu-title">Đơn hàng</h3>
+                    <!-- /.menu-title -->
+
+
+                    <li>
+                        <a href="/admin/orders">
+                            <i class="menu-icon ti-email"></i><span style="color:black ;font-weight: bold">Tình trạng đơn hàng</span></a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+   <!--  <div class="col-lg-12">
+        <header id="header" class="header">
+            <div class="col-lg-8">
+                <div class="header-menu">
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">Tìm kiếm</label>
+                        <div class="col-10">
+                            <input class="form-control" type="search" id="example-search-input">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="float-right">
+                    <img src="/imgs/logo.png" width="100px" height="50px">
+                </div>
+            </div>
+        </header>
+
+    </div>
+    end header -->
+    <div class="row">
+    <div class="col-md-6">
+            <h4 style="margin-top: 50px;margin-bottom:50px">Thêm loại sản phảm mới vào hệ thống</h4>
+            <form action="/admin/categories/add" method="post">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Mã loại</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="CatID" required="true" placeholder="Nhập mã loại sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Tên loại</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="CatName" required="true" placeholder="Nhập tên loại sản phẩm">
+                    </div>
+                </div>
+
+            	<input class="btn btn-success" style="float: right;margin-right:200px" type="Submit" name="Submit" value="Thêm">
+            </form>
+        </div>
+
+        {{!-- form modify --}}
+        <div class="col-md-6">
+            <h4 style="margin-top: 50px;margin-bottom:50px">Sửa loại sản phẩm đã có trong hệ thống</h4>
+            <form action="/admin/categories/modify" method="post">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Mã loại</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        {{!-- <input class="form-control" style="width: 100%;" type="text" name="CatID" required="true" placeholder="Nhập mã loại sản phẩm"> --}}
+                        <select class="input-select" name="option">
+                            {{#each Item}}
+							    <option value="{{CatID}}">{{CatID}}</option>
+                            {{/each}}
+					    </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Tên loại</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="CatName" required="true" placeholder="Nhập tên loại sản phẩm">
+                    </div>
+                </div>
+
+            	<input class="btn btn-success" style="float: right;margin-right:200px" type="Submit" name="Submit" value="Sửa">
+            </form>
+        </div>
+    </div>
+    
+
+    <div style="margin-top:50px">
+        <table class="table">
+            <thead class="">
+                <tr>
+                    <th scope="col">Mã loại</th>
+                    <th scope="col">Tên loại</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each Item}}
+                <tr >
+                    <form action="/admin/categories/delete" method="POST">
+                    <td>{{CatID}}</td>
+                    <input type="hidden" name="id" value="{{CatID}}">
+                    <td>{{CatName}}</td> 
+                    <td><input class="btn btn-success" style="float: right;margin-right:200px ; margin-top:0px" type="Submit" name="Submit" value="Xóa" ></td>
+                    </form>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+	<div class="col-md-12 col-xs-12">
+		<div class="store-filter clearfix">
+
+			<ul class="store-pagination">
+			{{#each page_numbers}}
+			{{#if isCurPage}}
+				<li class="active"><a href="javascript:;">{{value}}</a></li>
+			{{else}}
+				<li><a href="?page={{value}}">{{value}}</a></li>
+			{{/if}}
+			{{/each}}
+				<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>

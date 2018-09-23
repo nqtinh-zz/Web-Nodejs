@@ -1,0 +1,238 @@
+
+{{#section 'title'}}
+{{#with product}}
+	{{{ProName}}}
+{{/with}}
+{{/section}}
+
+{{#section 'title'}} {{#with product}} {{ProName}} {{/with}} {{/section}} 
+{{#section 'nav'}}
+<!-- NAV -->
+<li class="active">
+	<a href="/home">
+		<i class="fas fa-home"></i> Trang chủ</a>
+</li>
+
+<li class="dropdown">
+	<a href="#">
+		<i class="fas fa-bars"></i> Xem theo loại sản phẩm</a>
+	<div class="dropdown-content">
+		{{#each layoutVM.categories}}
+		<a href="/category/{{CatID}}">{{CatName}}</a>
+		{{/each}}
+	</div>
+</li>
+<li class="dropdown">
+	<a href="#">
+		<i class="fas fa-bars"></i> Xem theo nhà sản xuất</a>
+	<div class="dropdown-content">
+		{{#each layoutVM2.producers}}
+		<a href="/producer/{{ProduID}}">{{ProduName}}</a>
+		{{/each}}
+	</div>
+</li>
+<!-- /NAV -->
+{{/section}} <!-- Product thumb imgs -->
+
+{{#section 'breadcrumb'}}
+	{{#with product}}
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section" style="margin-top:0px">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb-tree">
+							<li><a href="/home">Trang chủ</a></li>
+							<li><a href="/producer/{{ProduID}}">{{ProduName}}</a></li>
+							<li class="active">{{ProName}}</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->	
+	{{/with}}
+{{/section}}
+
+{{#with product}}
+	<div class="col-lg-2  ">
+		<div id="product-imgs">
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/thumb1.jpg" />
+			</div>
+
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/thumb2.jpg" />
+			</div>
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/thumb1.jpg" />
+			</div>
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/thumb3.jpg" />
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-5 ">
+		<div id="product-main-img">
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/main1.jpg" />
+			</div>
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/main2.jpg" />
+			</div>
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/main1.jpg" />
+			</div>
+			<div class="product-preview">
+				<img src="/imgs/{{ProID}}/main3.jpg" />
+			</div>
+		</div>
+	</div>
+	<!-- /Product main img -->
+	<div class="col-lg-5">
+		<div class="product-details">
+			<h2 class="product-name">{{ProName}}</h2>
+			<p>Lượt xem :{{number_format Views}} | Lượt bán :{{number_format Sales}}</p>
+			<p>Tồn kho: {{Quantity}}</p>
+			<h3 class="product-price">{{number_format Price}}</h3>
+			<span class="product-available">Còn hàng</span>
+		
+			{{{Des}}}
+			
+			{{#if ../layoutVM.isLogged}}
+			<form class="form-horizontal" id="frmAddItem" method="post" action="/account/cart/add">
+				<div class="add-to-cart">
+					<div class="qty-label">
+						Số lượng
+						<div class="input-number">
+							<input type="hidden" name="proId"  value="{{../product.ProID}}">
+			                <input name="quantity" type="number" class="input-number"  value="1">
+							<span class="qty-up">+</span>
+							<span class="qty-down">-</span>
+						</div>
+					</div>
+					<a><button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>THÊM VÀO GIỎ</button></a>
+				</div>
+			</form>
+			{{/if}}
+			
+			<ul class="product-links">
+				<li>Danh mục:</li>
+				<li>
+					<a href="/category/{{CatID}}">{{CatName}}</a>
+				</li>
+				<li>
+					<a href="/producer/{{ProduID}}">{{ProduName}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /Product details -->
+	<!-- /product tab -->
+{{/with}}
+<!--Product same producer -->
+<!-- Section -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="section-title text-center">
+					<h3 class="title">Sản phẩm cùng loại</h3>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+			{{#each loadSameProducer}}
+			<!-- product -->
+			<a href="/product/detail/{{ProID}}">
+			<div class="col-md-2 col-xs-6">
+				<div class="product">
+					<div class="product-img">
+						<img src="/imgs/{{ProID}}/main.jpg" height="140px" width="100px" alt="">
+					</div>
+					<div class="product-body">
+						<p class="product-category">{{CatName}}</p>
+						<h3 class="product-name">
+							{{ProName}}
+						</h3>
+						<h4 class="product-price">{{Price}}</h4>
+					</div>
+					{{#if ../layoutVM.isLogged}}
+						<form class="form-horizontal" id="frmAddItem" method="post" action="/account/cart/add">
+							<div class="add-to-cart">								
+								<div class="input-number">
+									<input type="hidden" name="proId"  value="{{../product.ProID}}">
+					                <input name="quantity" type="hidden" class="input-number"  value="1">				
+					                <a><button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>THÊM VÀO GIỎ</button></a>
+					            </div>
+							</div>
+						</form>
+					{{/if}}
+				</div>
+			</div>
+			</a>
+			{{/each}}
+			<div class="col-md-1"></div>
+		</div>
+
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+
+<!-- Section -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="section-title text-center">
+					<h3 class="title">Sản phẩm cùng hãng</h3>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+			{{#each loadSameCategory}}
+			<!-- product -->
+			<a href="/product/detail/{{ProID}}">
+			<div class="col-md-2 col-xs-6">
+				<div class="product">
+					<div class="product-img">
+						<img src="/imgs/{{ProID}}/main.jpg" height="140px" width="100px" alt="">
+					</div>
+					<div class="product-body">
+						<p class="product-category">{{ProduName}}</p>
+						<h3 class="product-name">
+							{{ProName}}
+						</h3>
+						<h4 class="product-price">{{Price}}</h4>
+					</div>
+					{{#if ../layoutVM.isLogged}}
+						<form class="form-horizontal" id="frmAddItem" method="post" action="/account/cart/add">
+							<div class="add-to-cart">								
+								<div class="input-number">
+									<input type="hidden" name="proId"  value="{{../product.ProID}}">
+					                <input name="quantity" type="hidden" class="input-number"  value="1">				
+					                <a><button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>THÊM VÀO GIỎ</button></a>
+					            </div>
+							</div>
+						</form>
+					{{/if}}
+				</div>
+			</div>
+			</a>
+			{{/each}}
+			<div class="col-md-1"></div>
+		</div>
+
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>

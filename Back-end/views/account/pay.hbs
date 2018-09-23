@@ -1,0 +1,146 @@
+{{#section 'title'}}
+    Thanh toán
+{{/section}}
+
+{{#section 'js'}}
+  <script type="text/javascript">
+    var validate = function() {
+
+
+      if ($('#txtName').val().length === 0 || $('#txtPhone').val().length === 0 || $('#txtAddress').val().length === 0 ) {
+          alert('Vui lòng nhập đầy đủ thông tin');
+          return false;
+      }    
+      return true;
+      }
+  </script>
+{{/section}}
+
+<form type="hidden" id="frmAddItem" method="post" action="/account/cart/add">
+  <input type="hidden" name="proId" id="txtP">
+  <input type="hidden" name="quantity" id="txtQ">
+  
+</form>
+
+<div id="aside" class="col-md-2">
+  <!-- aside Widget -->
+  <div class="aside">
+    <h3 class="aside-title">Tài khoản</h3>
+    <div class="checkbox-filter">
+
+      <div class="input-checkbox">    
+        <a href="">
+          <label for="brand-1">
+            <a href="/account/profile/{{layoutVM.curUser.f_ID}}" target="blank">Thông tin cá nhân
+            </a>
+            
+          </label>
+        </a>
+      </div>
+      <div class="input-checkbox">    
+        <a href="">
+          <label for="brand-1">
+            <a href="/account/updateinfo/{{layoutVM.curUser.f_ID}}" target="blank">Cập nhật thông tin 
+            </a>
+            
+          </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          <a href="/account/cart/{{layoutVM.curUser.f_ID}}" target="blank">Giỏ hàng</a>
+        </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          <a href="/account/pay/{{layoutVM.curUser.f_ID}}" target="blank">Thanh toán</a>
+          
+        </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          
+          <a href="/account/historypay/{{layoutVM.curUser.f_ID}}" target="blank">Lịch sử mua hàng</a>
+        </label>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /aside Widget -->    
+</div>
+<div id="store" class="col-md-10">
+  <div class="col-md-12 order-details">
+    
+    <div class="section-title text-center">
+      <h3 class="title">Giỏ hàng</h3>
+    </div>
+    <div class="order-summary">
+      <div class="order-col">
+        <div><strong>SẢN PHẨM</strong></div>
+        <div><strong>TỔNG CỘNG</strong></div>
+        
+      </div>
+      <div class="order-products">  
+        {{#each items}} 
+          <div class="order-col">    
+              <div>
+                <a href="#" class="at-in">
+                  <img src="/imgs/{{product.ProID}}/main.jpg" width="15%" />{{product.ProName}}
+                </a>
+              </div>
+              <div>{{number_format amount}}₫</div>
+            
+          </div>  
+        {{/each}}
+        <div class="order-col">
+          <div><strong>TỔNG CỘNG</strong></div>
+          <div><strong class="order-total">{{number_format total}}₫</strong></div>
+        </div>
+        
+        
+
+      </div>
+    </div>
+
+    <br>
+    <div class="section-title text-center">
+      <h3 class="title">Địa chỉ giao hàng</h3>
+    </div>
+    <div class="order-summary">
+      
+    </div>
+    </br>
+    </br>
+    
+    
+    <form action="" method="POST" class="form-horizontal" role="form" onsubmit="return validate();">
+          <label for="txtUsername" class="col-sm-3 ">Điện thoại di động</label>  
+            <input type="text"  id="txtPhone" placeholder="0164XXXXXXX" name="phone">
+      <label for="txtUsername" class="col-sm-3 ">Địa chỉ nhận hàng</label>  
+            <input type="text"  id="txtAddress" placeholder="Hồ Chí Minh" name="address">
+            
+            
+
+        
+      </br>
+      </br>
+      </br>
+      <div class="input-checkbox">
+        <input type="checkbox" id="terms">
+        <label for="terms">
+          <span></span>
+          I've read and accept the <a href="#">terms & conditions</a>
+        </label>
+      </div>
+
+      <a class="primary-btn order-submit " ><button type="submit" class="primary-btn ">Thanh toán</button></a>
+    </form>
+  </div>
+
+  
+</div>

@@ -1,0 +1,43 @@
+{{#section 'title'}}
+  Đăng nhập
+{{/section}}
+
+
+
+{{#if showError}}
+<div class="alert alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Title!</strong> {{errorMsg}}
+</div>
+{{/if}}
+
+{{#section 'login'}}
+    <!-- row -->
+    <div id="login-box">
+      <div class="left">
+        <h1 class="h1">Sign in</h1>
+        <form class="form-horizontal" method="post" action="" id="frmLogin">  
+          <input type="text"  id="txtUsername" placeholder="Tên đăng nhập" name="username" required autofocus>
+          <input type="password"  id="txtPWD" placeholder="Password" name="rawPWD" required>                         
+          <label>
+              <input type="checkbox" name="remember">
+              Remember
+          </label>
+          <button type="submit" class="primary-btn order-submit">
+            Sign In
+          </button>      
+        </form>
+          
+      </div>
+      
+      <div class="rightsignup">
+        <span class="loginwith">Log in with</span>
+        
+        <button class="social-signin facebook">Log in with facebook</button>
+        <button class="social-signin twitter">Log in with Twitter</button>
+        <button class="social-signin google">Log in with Google+</button>
+      </div>
+      <div class="or">OR</div>
+    </div>
+    <!-- /row -->
+{{/section}}

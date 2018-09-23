@@ -1,0 +1,81 @@
+
+{{#section 'title'}}
+  Đăng ký
+{{/section}}
+
+
+{{#section 'css'}}
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+{{/section}}
+
+{{#section 'js'}}
+
+  <script src="/assets/css/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script type="text/javascript">
+    $('#txtDOB').datepicker({
+      format: 'd/m/yyyy',
+      autoclose: true
+    });
+
+    var validate = function() {
+        if ($('#txtUsername').val().length === 0) {
+            alert('Error');
+            return false;
+        }
+
+        if ($('#txtPWD').val() !== $('#txtCPWD').val()) {
+            alert('not match');
+            return false;
+        }
+
+        return true;
+    }
+  </script>
+{{/section}}
+
+
+{{#section 'register'}}
+    <!-- row -->
+        <div id="login-box">
+          <div class="left">
+            <h1 class="h1">Sign up</h1>
+            
+             <form action="" method="POST" class="form-horizontal" role="form" onsubmit="return validate();">
+              
+                        <input type="text" id="txtUsername" placeholder="Tên đăng nhập" name="username" required autofocus>
+                   
+                        <input type="password"  id="txtPWD" placeholder="Password" name="rawPWD" required>
+                   
+                        <input type="password"  id="txtCPWD" placeholder="Nhập lại password" name="cPWD" required>
+                    
+                        <input type="text"  id="txtName" placeholder="Họ tên" name="name" required>
+                    
+                        <input type="text"  id="txtEmail" placeholder="Email" name="email" required>
+                    
+                        <input type="text"  id="txtDOB" placeholder="d/m/yyyy" name="dob" required>
+                    
+                  
+                     <div class="g-recaptcha" data-sitekey="6LevCWEUAAAAALEciD1YVK9PzI89okEBoHXQb2T2"></div>
+                 
+                  <button type="submit" class="primary-btn order-submit">
+                    Đăng ký
+                  </button>
+                
+          
+            </form>
+               
+          
+          </div>
+          
+          <div class="rightsignup">
+            <span class="loginwith">Login in with</span>
+            
+            <button class="social-signin facebook">Log in with facebook</button>
+            <button class="social-signin twitter">Log in with Twitter</button>
+            <button class="social-signin google">Log in with Google+</button>
+          </div>
+          <div class="or">OR</div>
+        </div>
+    <!-- /row -->
+{{/section}}

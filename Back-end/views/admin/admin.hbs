@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/imgs/logo.png" type="image/png" sizes="8x8">
+    <title>Admin</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="../assets_admin/css/normalize.css">
+    <link rel="stylesheet" href="../assets_admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets_admin/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="../assets_admin/scss/style.css">
+    <link href="../assets_admin/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+
+
+    <!--  Main handlebar css-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+		<!-- 	<link type="text/css" rel="stylesheet" href="css/bootstrap4.css"/> -->
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="../assets/css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="../assets/css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="../assets/css/style1.css">
+		<link type="text/css" rel="stylesheet" href="../assets/css/style-dropdown.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+    <aside id="left-panel" class="left-panel" style="background-color:#e7e7e7">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header" style="background-color:#e7e7e7">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/home" >
+                    <img src="/imgs/logo.png" alt="Logo">
+                </a>
+                <a class="navbar-brand hidden" href="/home" >
+                    <img src="/imgs/logo.png" alt="Logo">
+                </a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse" style="background-color:#e7e7e7">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/admin/dashboard" >
+                            <i class="menu-icon fa fa-home" style="color:black"></i><span style="color:black ;font-weight: bold">Dashboard </span></a>
+                    </li>
+                    <h3 class="menu-title">Quản lý</h3>
+                    <!-- /.menu-title -->
+                    <li>
+                        <a href="/admin/products">
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Sản phẩm </span> </a>
+                    </li>
+                    <li>
+                        <a href="/admin/producers">
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Nhà sản xuất</span> </a>
+                    </li>
+                    <li>
+                        <a href="/admin/categories">
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Loại sản phẩm</span> </a>
+                    </li>
+
+                    <h3 class="menu-title">Đơn hàng</h3>
+                    <!-- /.menu-title -->
+
+
+                    <li>
+                        <a href="/admin/orders">
+                            <i class="menu-icon ti-email"></i><span style="color:black ;font-weight: bold">Tình trạng đơn hàng</span></a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+   <!--  <div class="col-lg-12">
+        <header id="header" class="header">
+            <div class="col-lg-8">
+                <div class="header-menu">
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">Tìm kiếm</label>
+                        <div class="col-10">
+                            <input class="form-control" type="search" id="example-search-input">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="float-right">
+                    <img src="/imgs/logo.png" width="100px" height="50px">
+                </div>
+            </div>
+        </header>
+
+    </div>
+    end header -->
+   <div class="row">
+    <div class="col-md-5" style="margin-top: 50px;margin-bottom:50px; margin-left: 30px">
+            <h4>Thêm sản phẩm mới vào hệ thống</h4><br>
+            <form action="/admin/products/addPro" method="post">
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Mã sản phẩm</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="ProID" required="true" placeholder="Nhập mã sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Tên sản phẩm</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="ProName" required="true" placeholder="Nhập tên sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Loại sản phẩm</label>
+                    <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
+                        <select class="input-select" name="CatID">
+                            {{#each Cate}}
+                                <option value={{CatID}}>{{CatName}}</option>
+                            {{/each}}
+                            
+                        </select>
+                    </div>
+                </div>
+                <br>
+              
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Nhà sản xuất</label>
+                    <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
+                        <select class="input-select" name="ProduID">
+                            {{#each Produ}}
+                                <option value={{ProduID}}>{{ProduName}}</option>
+                            {{/each}}
+                            
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Số lượng</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="Quantity" required="true" placeholder="Nhập số lượng sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Giá bán</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="Price" required="true" placeholder="Nhập giá thành sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label" for="exampleFormControlTextarea1">Mô tả sản phẩm</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <textarea class="form-control noresize" id="exampleFormControlTextarea1" rows="3" name="Des"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Ngày nhập kho</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="AddDate" required="true" placeholder="dd-mm-yy">
+                    </div>
+                </div>
+                <input class="btn btn-success" style="float: right;margin-right: 50px; margin-top: 0px" type="Submit" name="Submit" value="Thêm">
+            </form>
+        </div>
+          {{!-- form modify --}}
+        <div class="col-md-5" style="margin-top: 50px;margin-bottom:50px;">
+             <h4>Sửa sản phẩm đã có trong hệ thống</h4><br>
+            <form action="/admin/products/modifyPro" method="post">
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Mã sản phẩm</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <select class="input-select" name="ProID">
+                            {{#each ProId}}
+                                <option value={{ProID}}>{{ProID}}</option>
+                            {{/each}}   
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Tên sản phẩm</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="ProName" required="true" placeholder="Nhập tên sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Loại sản phẩm</label>
+                    <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
+                        <select class="input-select" name="CatID">
+                            {{#each Cate}}
+                                <option value={{CatID}} >{{CatName}}</option>
+                            {{/each}}
+                            
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Nhà sản xuất</label>
+                    <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
+                        <select class="input-select" name="ProduID">
+                            {{#each Produ}}
+                                <option value={{ProduID}} >{{ProduName}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Số lượng</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="Quantity" required="true" placeholder="Nhập số lượng sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Giá bán</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="Price" required="true" placeholder="Nhập giá thành sản phẩm">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-4 col-form-label" for="exampleFormControlTextarea1">Mô tả sản phẩm</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <textarea class="form-control noresize" id="exampleFormControlTextarea1" rows="3" name="Des"></textarea>
+                    </div>
+                </div>
+                   <div class="form-group row">
+                    <label class="col-md-4 col-form-label">Ngày nhập kho</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="AddDate" required="true" placeholder="Ngày nhập kho">
+                    </div>
+                </div>
+                <input class="btn btn-success" style="float: right;margin-right:50px; margin-top: 0px" type="Submit" name="Submit" value="Sửa">
+            </form>
+        </div>
+    </div>
+
+   <div class="container-fluid">
+            <div class="card card-container">
+                {{#each loadByProducts}}
+                    <form method="post">
+                          <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                          <label for="ProID">Mã sản phẩm</label>
+                                          <input type="text" class="form-control" id="ProID" aria-describedby="text" value="{{ProID}}">
+                                    </div>
+                                    <div class="form-group">
+                                          <label for="Quantity">Số lượng</label>
+                                          <input type="text" class="form-control" id="ProName" value="{{Quantity}}" width="200px">
+                                    </div>
+                                    <div class="form-group">
+                                          <label for="ProPrice">Giá sản phẩm</label>
+                                          <input type="text" class="form-control" id="ProName" value="{{Price}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                          <label for="ProName">Tên sản phẩm</label>
+                                          <input type="text" class="form-control" id="ProName" value="{{ProName}}">
+                                    </div>
+                                    <div class="form-group">
+                                          <label for="ProPrice">Giá sản phẩm</label>
+                                          <input type="text" class="form-control" id="ProName" value="{{Price}}">
+                                    </div>
+                                </div>
+                          </div>
+
+                          <div class="form-group">
+                                <label for="Des">Mô tả sản phẩm</label>
+                                <textarea class="form-control" row = "5" id="Des" value="{{Des}}"></textarea>
+                          </div>
+                          
+                          <button type="submit" class="btn btn-primary">Import</button>
+                    </form>
+                {{/each}}
+            </div><!-- /card-container -->
+        </div><!-- /container -->
+          </div>
+    {{!-- <div class="row"> --}}
+    <div class="row" style="margin-left:40px; margin-right: 40px; margin-top: 50px">
+        <table class="table">
+            <thead class="">
+                <tr>
+                    <th scope="col">Mã sản phẩm</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Loại sản phẩm</th>
+                    <th scope="col">Nhà sản xuất</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Giá bán</th>
+                    <th scope="col">Lượt bán</th>
+                    <th scope="col">Lượt xem</th>
+                    <th scope="col">Ngày thêm</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each Item}}
+                <tr>
+                    <form action="/admin/products/delete" method="POST">
+                    <td>{{ProID}}</td>
+                     <input type="hidden" name="id" value="{{ProID}}">
+                    <td>{{ProName}}</td>    
+                    <td>{{CatName}}</td>
+                    <td>{{ProduName}}</td>
+                    <td>{{Quantity}}</td>
+                    <td>{{Price}}</td>
+                    <td>{{Sales}}</td>
+                    <td>{{Views}}</td>
+                    <td>{{AddDate}}</td>
+                    <td><input class="btn btn-success" style="float: right; ; margin-top:0px" type="Submit" name="Submit" value="Xóa" ></td>
+                    </form>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{!-- </div> --}}
+    <div class="row">
+    	<div class="col-md-12 col-xs-12">
+    		<div class="store-filter clearfix">
+
+    			<ul class="store-pagination">
+    			{{#each page_numbers}}
+    			{{#if isCurPage}}
+    				<li class="active"><a href="javascript:;">{{value}}</a></li>
+    			{{else}}
+    				<li><a href="?page={{value}}">{{value}}</a></li>
+    			{{/if}}
+    			{{/each}}
+    				<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+    			</ul>
+    		</div>
+    	</div>
+    </div>
+</body>

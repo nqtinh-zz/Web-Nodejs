@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/imgs/logo.png" type="image/png" sizes="8x8">
+    <title>LoginAdmin</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="../assets_admin/css/normalize.css">
+    <link rel="stylesheet" href="../assets_admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/themify-icons.css">
+    <link rel="stylesheet" href="../assets_admin/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets_admin/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../assets_admin/css/stylelogin.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="../assets_admin/scss/style.css">
+    <link href="../assets_admin/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+    <div class="container-fluid">
+            <div class="card card-container">
+                <img id="profile-img" class="profile-img-card" src="/imgs/logo.png" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form method="post" action="/admin/login" class="form-signin">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <input type="text" id="inputEmail" class="form-control" name="username" placeholder="username" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                </form><!-- /form -->
+            </div><!-- /card-container -->
+        </div><!-- /container -->
+</html>

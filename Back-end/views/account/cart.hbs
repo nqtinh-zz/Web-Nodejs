@@ -1,0 +1,113 @@
+{{#section 'title'}}
+    Giỏ hàng
+{{/section}}
+
+{{#section 'js'}}
+<script type="text/javascript">
+  $('.removeItem').on('click', function() {
+      var id = $(this).data('proid');
+      $('#txtP').val(id);
+      $('#frmRemoveItem').submit();
+  });
+</script>
+{{/section}}
+
+<form id="frmRemoveItem" method="post" action="/account/cart/remove">
+  <input type="hidden" name="proId" id="txtP">
+</form>
+{{#if layoutVM.isLogged}}
+<div id="aside" class="col-md-2">
+  <!-- aside Widget -->
+  <div class="aside">
+    <h3 class="aside-title">Tài khoản</h3>
+    <div class="checkbox-filter">
+
+      <div class="input-checkbox">    
+        <a href="">
+          <label for="brand-1">
+            <a href="/account/profile/{{layoutVM.curUser.f_ID}}" target="blank">Thông tin cá nhân
+            </a>
+            
+          </label>
+        </a>
+      </div>
+      <div class="input-checkbox">    
+        <a href="">
+          <label for="brand-1">
+            <a href="/account/updateinfo/{{layoutVM.curUser.f_ID}}" target="blank">Cập nhật thông tin 
+            </a>
+            
+          </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          <a href="/account/cart/{{layoutVM.curUser.f_ID}}" target="blank">Giỏ hàng</a>
+        </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          <a href="/account/pay/{{layoutVM.curUser.f_ID}}" target="blank">Thanh toán</a>
+          
+        </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          
+          <a href="/account/historypay/{{layoutVM.curUser.f_ID}}" target="blank">Lịch sử mua hàng</a>
+        </label>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /aside Widget -->    
+</div>
+{{/if}} 
+<div id="store" class="col-md-10">
+  <div class="col-md-12">
+    <div class="section-title">
+        <h3 class="title">Giỏ hàng</h3>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Tổng số</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items}}
+        <tr>
+          
+          <td><img src="/imgs/{{product.ProID}}/main.jpg" width="20%" />{{product.ProName}}</td>
+          <td>{{number_format product.Price}}₫</td>
+          <td>{{quantity}}</td>
+          <td>{{number_format amount}}₫</td>
+          <td class="text-right">
+            <a data-proid="{{product.ProID}}" class="btn btn-danger btn-xs removeItem" href="javascript:;" role="button">
+              <span class="fa fa-remove"></span>
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>&nbsp;</td>
+          <td>Tổng tiền:</td>
+          <td>&nbsp;</td>
+          <td>{{number_format total}}₫</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

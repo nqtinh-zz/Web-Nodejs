@@ -1,0 +1,135 @@
+ {{#section 'title'}} Search {{/section}} {{#section 'nav'}}
+<!-- NAV -->
+<li class="active">
+	<a href="home/index">
+		<i class="fas fa-home"></i> Trang chủ</a>
+</li>
+
+<li class="dropdown">
+	<a href="#">
+		<i class="fas fa-bars"></i> Xem theo loại sản phẩm</a>
+	<div class="dropdown-content">
+		{{#each layoutVM.categories}}
+		<a href="/category/{{CatID}}">{{CatName}}</a>
+		{{/each}}
+	</div>
+</li>
+<li class="dropdown">
+	<a href="#">
+		<i class="fas fa-bars"></i> Xem theo nhà sản xuất</a>
+	<div class="dropdown-content">
+		{{#each layoutVM2.producers}}
+		<a href="/producer/{{ProduID}}">{{ProduName}}</a>
+		{{/each}}
+	</div>
+</li>
+<!-- /NAV -->
+{{/section}} {{#section 'bodyleft'}}
+<!-- aside Widget -->
+<div class="aside" style="padding-left:0px">
+	<!--<h3 class="aside-title">Tìm kiếm nâng cao</h3> -->
+	<div style="margin-top:30px">
+		
+		<div class="col-md-8">
+			<div class="header-search">
+				<form method="POST" action="/search/advancesearch">
+				<h4>Hãng sản xuất</h4>
+					<select class="input-select" name="optionProdu">
+						<option value="all">Tất cả</option>
+						<option value="Asus">Laptop Asus</option>
+						<option value="Dell">Laptop Dell</option>
+						<option value="Mac">Laptop Macbook</option>
+						<option value="MSI">Laptop MSI</option>
+					</select>
+					<h4>Loại laptop</h4>
+					<select class="input-select" name="optionCat">
+						<option value="all">Tất cả</option>
+						<option value="Laptop Gaming">Lap Gaming</option>
+						<option value="Laptop Văn phòng">Lap Văn phòng</option>
+						<option value="Laptop Doanh nhân">Lap Doanh nhân</option>
+						<option value="Laptop Ultrabook">Lap Ultrabook</option>
+					</select>
+					<h4>Mức giá</h4>
+					<select class="input-select" name="optionPrice">
+						<option value="100000000">Tất cả</option>
+						<option value="20000000">10-20 triệu đồng</option>
+						<option value="30000000">20-30 triệu đồng</option>
+						<option value="40000000">30-40 triệu đồng</option>
+						<option value="50000000">40-50 triệu đồng</option>
+					</select>
+					<button class="primary-btn order-submit" type="submit" style="margin-top:50px">Tìm kiếm</button>
+				</form>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!-- /aside Widget -->
+{{/section}} {{#section 'bodyright'}}
+
+<!-- store products -->
+<div class="row">
+	{{#each searchItem}}
+	<!-- product -->
+	<div class="col-md-4 col-xs-6">
+		<a href="/product/detail/{{ProID}}" target="blank">
+			<div class="product">
+				<div class="product-img">
+					<img src="/imgs/{{ProID}}/main.jpg" alt="">
+				</div>
+				<div class="product-body">
+					<p class="product-category">{{ProduName}}</p>
+					<!--<p class="product-category">{{ProduName}}</p>-->
+					<h3 class="product-name">
+						<a href="#">{{ProName}}</a>
+					</h3>
+					<h4 class="product-price">{{number_format Price}} ₫
+						<del class="product-old-price"></del>
+					</h4>
+
+				</div>
+				<div class="add-to-cart">
+					<a href="#">
+						<button class="add-to-cart-btn">
+							<i class="fa fa-shopping-cart"></i>THÊM VÀO GIỎ</button>
+					</a>
+				</div>
+			</div>
+		</a>
+	</div>
+	
+	<!-- /product -->
+	{{/each}}
+</div>
+
+<div class="clearfix visible-sm visible-xs"></div>
+
+
+
+<!-- /store products -->
+
+<div class="row">
+	<div class="col-md-12 col-xs-12">
+		<div class="store-filter clearfix">
+
+			<ul class="store-pagination">
+				{{#each page_numbers}} {{#if isCurPage}}
+				<li class="active">
+					<a href="javascript:;">{{value}}</a>
+				</li>
+				{{else}}
+				<li>
+					<a href="?page={{value}}">{{value}}</a>
+				</li>
+				{{/if}} {{/each}}
+
+				<li>
+					<a href="#">
+						<i class="fa fa-angle-right"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{{/section}}

@@ -1,0 +1,119 @@
+{{#section 'css'}}
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+{{/section}}
+
+{{#section 'js'}}
+  <script src="/assets/css/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+
+  <script type="text/javascript">
+    $('#txtDOB').datepicker({
+      format: 'd/m/yyyy',
+      autoclose: true
+    });
+
+    var validate = function() {
+        if ($('#txtUsername').val().length === 0) {
+            alert('Error');
+            return false;
+        }
+
+        if ($('#txtPWD').val() !== $('#txtCPWD').val()) {
+            alert('not match');
+            return false;
+        }
+
+        return true;
+    }
+  </script>
+{{/section}}
+
+{{#section 'title'}}
+    Cập nhật thông tin cá nhân
+{{/section}}
+
+{{#if layoutVM.isLogged}}
+<!-- ASIDE -->
+<div id="aside" class="col-md-2">
+  <!-- aside Widget -->
+  <div class="aside">
+    <h3 class="aside-title">Tài khoản</h3>
+    <div class="checkbox-filter">
+
+      <div class="input-checkbox">    
+        <a href="">
+          <label for="brand-1">
+            <a href="/account/profile/{{layoutVM.curUser.f_ID}}" target="blank">Thông tin cá nhân
+            </a>
+            
+          </label>
+        </a>
+      </div>
+      <div class="input-checkbox">    
+        <a href="">
+          <label for="brand-1">
+            <a href="/account/updateinfo/{{layoutVM.curUser.f_ID}}" target="blank">Cập nhật thông tin 
+            </a>
+            
+          </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          <a href="/account/cart/{{layoutVM.curUser.f_ID}}" target="blank">Giỏ hàng</a>
+        </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          <a href="/account/pay/{{layoutVM.curUser.f_ID}}" target="blank">Thanh toán</a>
+          
+        </label>
+        </a>
+      </div>
+      <div class="input-checkbox">
+        <a href="">
+          <label for="brand-1">
+          
+          <a href="/account/historypay/{{layoutVM.curUser.f_ID}}" target="blank">Lịch sử mua hàng</a>
+        </label>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /aside Widget -->    
+</div>
+<div id="store" class="col-md-10">
+  <div class="col-md-12">
+  <!-- Billing Details -->
+  <div class="billing-details">
+    <div class="section-title">
+      <h3 class="title">Cập nhật thông tin cá nhân</h3>
+    </div>
+    
+
+    <form action="" method="post"  role="form" onsubmit="return validate();">
+             
+                    
+                
+                    <input type="password"  id="txtPWD" placeholder="Password" name="rawPWD">
+                
+                    
+             
+                    <input type="text"  id="txtName" placeholder="Họ tên" name="name">
+             
+                    <input type="text"  id="txtEmail" placeholder="Email" name="email">
+          
+                    <input type="text"  id="txtDOB" placeholder="d/m/yyyy" name="dob">
+            
+              <button type="submit" class="primary-btn order-submit">
+                Cập nhật
+              </button>
+           
+        </form>
+  </div>
+  <!-- /Billing Details -->
+</div>
+{{/if}} 

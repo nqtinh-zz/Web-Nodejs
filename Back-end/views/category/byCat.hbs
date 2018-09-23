@@ -1,0 +1,123 @@
+{{#section 'title'}}
+	
+		{{nameCate.CatName}}
+	
+{{/section}}
+
+{{#section 'js'}}
+	<script type="text/javascript">
+		$('.addItem').on('click', function() {
+		    var id = $(this).data('proid');
+		    $('#txtP').val(id);
+		    $('#txtQ').val(1);
+		    $('#frmAddItem').submit();
+		});
+	</script>
+{{/section}}
+
+{{#section 'nav'}}
+<!-- NAV -->
+<li class="active"><a href="home/index"><i class="fas fa-home"></i> Trang chủ</a></li>
+	
+	<li class="dropdown"><a href="#"><i class="fas fa-bars"></i> Xem theo loại sản phẩm</a>
+		<div class="dropdown-content">
+			{{#each layoutVM.categories}}
+			<a href="/category/{{CatID}}">{{CatName}}</a>			
+			{{/each}}
+		</div>
+	</li>
+	<li class="dropdown"><a href="#"><i class="fas fa-bars"></i> Xem theo nhà sản xuất</a>
+		<div class="dropdown-content">
+			{{#each layoutVM2.producers}}
+			<a href="/producer/{{ProduID}}">{{ProduName}}</a>
+			{{/each}}
+		</div>
+	</li>
+<!-- /NAV -->
+{{/section}}
+
+<form type="hidden" id="frmAddItem" method="post" action="/account/cart/add">
+	<input type="hidden" name="proId" id="txtP">
+	<input type="hidden" name="quantity" id="txtQ">
+</form>
+
+{{#section 'bodyleft'}}
+<!-- aside Widget -->
+	<div class="aside">
+		<div  style="margin-top:30px">
+		<h4>Hãng sản xuất</h4>
+		<ul class="list-group list-group-flush">
+		{{#each layoutVM2.producers}}
+			<a href="/producer/{{ProduID}}"><li class="list-group-item " style="border: none">{{ProduName}}</li></a>
+		{{/each}}
+		</ul>
+		<h4>Loại laptop</h4>
+		<ul class="list-group list-group-flush">
+		{{#each layoutVM.categories}}
+				<a href="/category/{{CatID}}"><li class="list-group-item" style="border: none">{{CatName}}</li></a>
+		{{/each}}
+		</ul>
+	</div>
+	</div>
+<!-- /aside Widget -->
+{{/section}}
+
+{{#section 'bodyright'}}
+
+<!-- store products -->
+<div class="row">
+	{{#each products}}
+		<!-- product -->
+		<div class="col-md-4 col-xs-6">
+			<a href="/product/detail/{{ProID}}" target="blank">
+				<div class="product">
+					<div class="product-img">
+						<img src="/imgs/{{ProID}}/main.jpg" alt="">
+					</div>
+					<div class="product-body">
+						<p class="product-category">{{ProduName}}</p>
+						<h3 class="product-name">{{ProName}}</h3>
+						<h4 class="product-price">{{number_format Price}}  ₫</h4>	
+					</div>
+					{{#if ../layoutVM.isLogged}}
+						<div class="add-to-cart">
+							<a data-proid="{{ProID}}" href="javascript:;" class=" addItem">
+								<button class="add-to-cart-btn">
+									<i class="fa fa-shopping-cart"></i>THÊM VÀO GIỎ</button>
+							</a>
+						</div>
+					{{/if}}
+				</div>
+			</a>	
+		</div>
+		<!-- /product -->
+	{{/each}}
+
+		<div class="clearfix visible-sm visible-xs"></div>
+	
+
+
+		<!-- /store products -->
+
+<!-- store bottom filter -->
+<div class="row">
+	<div class="col-md-12 col-xs-12">
+		<div class="store-filter clearfix">
+
+			<ul class="store-pagination">
+			{{#each page_numbers}}
+			{{#if isCurPage}}
+				<li class="active"><a href="javascript:;">{{value}}</a></li>
+			{{else}}
+				<li><a href="?page={{value}}">{{value}}</a></li>
+			{{/if}}
+			{{/each}}
+				<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+	<!-- /store bottom filter -->
+{{/section}}
+
+			
