@@ -87,6 +87,6 @@ app.use('/admin/byProduAdmin', byProduAdminController);
 app.use('/search',searchController);
 app.use('/admin/adminManagements', adminManageController);
 
-app.listen(process.env.PORT || 4001, () => {
+app.listen(process.env.PORT || 4000, () => {
     console.log('Site running on port 4000');
 });
