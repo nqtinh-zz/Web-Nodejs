@@ -78,15 +78,15 @@
                     <!-- /.menu-title -->
                     <li>
                         <a href="/admin/products">
-                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Sản phẩm </span> </a>
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Sách </span> </a>
                     </li>
                     <li>
                         <a href="/admin/producers">
-                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Nhà sản xuất</span> </a>
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Nhà xuất bản</span> </a>
                     </li>
                     <li>
                         <a href="/admin/categories">
-                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Loại sản phẩm</span> </a>
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Loại sách</span> </a>
                     </li>
 
                     <h3 class="menu-title">Đơn hàng</h3>
@@ -131,17 +131,17 @@
     <div class="row">
     <div class="col-md-6">
         
-            <h4 style="margin-top: 50px;margin-bottom:50px">Thêm nhà sản xuất mới vào hệ thống</h4>
+            <h4 style="margin-top: 50px;margin-bottom:50px">Thêm nhà xuất bản mới vào hệ thống</h4>
             <form action="/admin/producers/add" method="post">
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Mã nhà sản xuất</label>
+                    <label class="col-md-3 col-form-label">Mã nhà xuất bản</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <input class="form-control" style="width: 100%;" type="text" name="ProduID" required="true" placeholder="Nhập mã nhà sản xuất">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Tên nhà sản xuất</label>
+                    <label class="col-md-3 col-form-label">Tên nhà xuất bản</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <input class="form-control" style="width: 100%;" type="text" name="ProduName" required="true" placeholder="Nhập tên nhà sản xuất">
                     </div>
@@ -152,10 +152,10 @@
         </div>
           {{!-- form modify --}}
         <div class="col-md-6">
-            <h4 style="margin-top: 50px;margin-bottom:50px">Sửa nhà sản xuất đã có trong hệ thống</h4>
+            <h4 style="margin-top: 50px;margin-bottom:50px">Sửa nhà xuất bản đã có trong hệ thống</h4>
             <form action="/admin/producers/modify" method="post">
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Mã nhà sản xuất</label>
+                    <label class="col-md-3 col-form-label">Mã nhà xuất bản</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         {{!-- <input class="form-control" style="width: 100%;" type="text" name="CatID" required="true" placeholder="Nhập mã loại sản phẩm"> --}}
                         <select class="input-select" name="option">
@@ -167,7 +167,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Tên nhà sản xuất</label>
+                    <label class="col-md-3 col-form-label">Tên nhà xuất bản</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <input class="form-control" style="width: 100%;" type="text" name="ProduName" required="true" placeholder="Nhập tên nhà sản xuất">
                     </div>

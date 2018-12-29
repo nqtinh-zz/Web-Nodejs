@@ -15,7 +15,7 @@
 
 <li class="dropdown">
 	<a href="#">
-		<i class="fas fa-bars"></i> Xem theo loại sản phẩm</a>
+		<i class="fas fa-bars"></i> Xem theo loại sách</a>
 	<div class="dropdown-content">
 		{{#each layoutVM.categories}}
 		<a href="/category/{{CatID}}">{{CatName}}</a>
@@ -24,7 +24,7 @@
 </li>
 <li class="dropdown">
 	<a href="#">
-		<i class="fas fa-bars"></i> Xem theo nhà sản xuất</a>
+		<i class="fas fa-bars"></i> Xem theo nhà xuất bản</a>
 	<div class="dropdown-content">
 		{{#each layoutVM2.producers}}
 		<a href="/producer/{{ProduID}}">{{ProduName}}</a>
@@ -59,7 +59,7 @@
 {{/section}}
 
 {{#with product}}
-	<div class="col-lg-2  ">
+	<!--<div class="col-lg-2  ">
 		<div id="product-imgs">
 			<div class="product-preview">
 				<img src="/imgs/{{ProID}}/thumb1.jpg" />
@@ -75,25 +75,15 @@
 				<img src="/imgs/{{ProID}}/thumb3.jpg" />
 			</div>
 		</div>
-	</div>
-	<div class="col-lg-5 ">
+	</div> -->
+	<div class="col-lg-6 ">
 		<div id="product-main-img">
-			<div class="product-preview">
-				<img src="/imgs/{{ProID}}/main1.jpg" />
-			</div>
-			<div class="product-preview">
-				<img src="/imgs/{{ProID}}/main2.jpg" />
-			</div>
-			<div class="product-preview">
-				<img src="/imgs/{{ProID}}/main1.jpg" />
-			</div>
-			<div class="product-preview">
-				<img src="/imgs/{{ProID}}/main3.jpg" />
-			</div>
+				<img style="width:400px; height:500px" src="/imgs/{{ProID}}/main_images.jpg" />
+
 		</div>
 	</div>
 	<!-- /Product main img -->
-	<div class="col-lg-5">
+	<div class="col-lg-6">
 		<div class="product-details">
 			<h2 class="product-name">{{ProName}}</h2>
 			<p>Lượt xem :{{number_format Views}} | Lượt bán :{{number_format Sales}}</p>
@@ -144,7 +134,7 @@
 
 			<div class="col-md-12">
 				<div class="section-title text-center">
-					<h3 class="title">Sản phẩm cùng loại</h3>
+					<h3 class="title">Sách cùng thể loại</h3>
 				</div>
 			</div>
 			<div class="col-md-1"></div>
@@ -154,7 +144,7 @@
 			<div class="col-md-2 col-xs-6">
 				<div class="product">
 					<div class="product-img">
-						<img src="/imgs/{{ProID}}/main.jpg" height="140px" width="100px" alt="">
+						<img src="/imgs/{{ProID}}/main_images.jpg" height="140px" width="100px" alt="">
 					</div>
 					<div class="product-body">
 						<p class="product-category">{{CatName}}</p>
@@ -195,7 +185,7 @@
 
 			<div class="col-md-12">
 				<div class="section-title text-center">
-					<h3 class="title">Sản phẩm cùng hãng</h3>
+					<h3 class="title">Sách cùng nhà xuất bản</h3>
 				</div>
 			</div>
 			<div class="col-md-1"></div>
@@ -205,7 +195,7 @@
 			<div class="col-md-2 col-xs-6">
 				<div class="product">
 					<div class="product-img">
-						<img src="/imgs/{{ProID}}/main.jpg" height="140px" width="100px" alt="">
+						<img src="/imgs/{{ProID}}/main_images.jpg" height="140px" width="100px" alt="">
 					</div>
 					<div class="product-body">
 						<p class="product-category">{{ProduName}}</p>

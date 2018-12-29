@@ -49,10 +49,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var sessionStore = new MySQLStore({
     host: 'localhost',
-    port: 3306,
+    port: 3000,
     user: 'root',
     password: 'root',
-    database: 'qllaptop',
+    database: 'qlbh',
     createDatabaseTable: true,
     schema: {
         tableName: 'sessions',
@@ -87,6 +87,6 @@ app.use('/admin/byProduAdmin', byProduAdminController);
 app.use('/search',searchController);
 app.use('/admin/adminManagements', adminManageController);
 
-app.listen(1200, () => {
-    console.log('Site running on port 1200');
+app.listen(process.env.PORT || 4001, () => {
+    console.log('Site running on port 4000');
 });

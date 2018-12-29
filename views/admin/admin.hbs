@@ -78,15 +78,15 @@
                     <!-- /.menu-title -->
                     <li>
                         <a href="/admin/products">
-                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Sản phẩm </span> </a>
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Sách </span> </a>
                     </li>
                     <li>
                         <a href="/admin/producers">
-                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Nhà sản xuất</span> </a>
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Nhà xuất bản</span> </a>
                     </li>
                     <li>
                         <a href="/admin/categories">
-                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Loại sản phẩm</span> </a>
+                            <i class="menu-icon fa fa-book"></i><span style="color:black ;font-weight: bold">Loại sách</span> </a>
                     </li>
 
                     <h3 class="menu-title">Đơn hàng</h3>
@@ -130,24 +130,24 @@
     end header -->
    <div class="row">
     <div class="col-md-5" style="margin-top: 50px;margin-bottom:50px; margin-left: 30px">
-            <h4>Thêm sản phẩm mới vào hệ thống</h4><br>
+            <h4>Thêm sách mới vào hệ thống</h4><br>
             <form action="/admin/products/addPro" method="post">
                 <div class="form-group row">
-                    <label class="col-md-4 col-form-label">Mã sản phẩm</label>
+                    <label class="col-md-4 col-form-label">Mã sách</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <input class="form-control" style="width: 100%;" type="text" name="ProID" required="true" placeholder="Nhập mã sản phẩm">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-md-4 col-form-label">Tên sản phẩm</label>
+                    <label class="col-md-4 col-form-label">Tên sách</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <input class="form-control" style="width: 100%;" type="text" name="ProName" required="true" placeholder="Nhập tên sản phẩm">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Loại sản phẩm</label>
+                    <label class="col-md-3 col-form-label">Loại sách</label>
                     <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
                         <select class="input-select" name="CatID">
                             {{#each Cate}}
@@ -160,7 +160,7 @@
                 <br>
               
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Nhà sản xuất</label>
+                    <label class="col-md-3 col-form-label">Nhà xuất bản</label>
                     <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
                         <select class="input-select" name="ProduID">
                             {{#each Produ}}
@@ -186,7 +186,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-md-4 col-form-label" for="exampleFormControlTextarea1">Mô tả sản phẩm</label>
+                    <label class="col-md-4 col-form-label" for="exampleFormControlTextarea1">Mô tả sách</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <textarea class="form-control noresize" id="exampleFormControlTextarea1" rows="3" name="Des"></textarea>
                     </div>
@@ -203,10 +203,10 @@
         </div>
           {{!-- form modify --}}
         <div class="col-md-5" style="margin-top: 50px;margin-bottom:50px;">
-             <h4>Sửa sản phẩm đã có trong hệ thống</h4><br>
+             <h4>Sửa sách đã có trong hệ thống</h4><br>
             <form action="/admin/products/modifyPro" method="post">
                 <div class="form-group row">
-                    <label class="col-md-4 col-form-label">Mã sản phẩm</label>
+                    <label class="col-md-4 col-form-label">Mã sách</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <select class="input-select" name="ProID">
                             {{#each ProId}}
@@ -217,14 +217,14 @@
                 </div>
                 <br>
                 <div class="form-group row">
-                    <label class="col-md-4 col-form-label">Tên sản phẩm</label>
+                    <label class="col-md-4 col-form-label">Tên sách</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
-                        <input class="form-control" style="width: 100%;" type="text" name="ProName" required="true" placeholder="Nhập tên sản phẩm">
+                        <input class="form-control" style="width: 100%;" type="text" name="ProName" required="true" placeholder="Nhập tên sách">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Loại sản phẩm</label>
+                    <label class="col-md-3 col-form-label">Loại sách</label>
                     <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
                         <select class="input-select" name="CatID">
                             {{#each Cate}}
@@ -236,7 +236,7 @@
                 </div>
                 <br>
                 <div class="form-group row">
-                    <label class="col-md-3 col-form-label">Nhà sản xuất</label>
+                    <label class="col-md-3 col-form-label">Nhà xuất bản</label>
                     <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left: 50px">
                         <select class="input-select" name="ProduID">
                             {{#each Produ}}
@@ -261,7 +261,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-md-4 col-form-label" for="exampleFormControlTextarea1">Mô tả sản phẩm</label>
+                    <label class="col-md-4 col-form-label" for="exampleFormControlTextarea1">Mô tả sách</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <textarea class="form-control noresize" id="exampleFormControlTextarea1" rows="3" name="Des"></textarea>
                     </div>
@@ -284,7 +284,7 @@
                           <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                          <label for="ProID">Mã sản phẩm</label>
+                                          <label for="ProID">Mã sách</label>
                                           <input type="text" class="form-control" id="ProID" aria-describedby="text" value="{{ProID}}">
                                     </div>
                                     <div class="form-group">
@@ -292,24 +292,24 @@
                                           <input type="text" class="form-control" id="ProName" value="{{Quantity}}" width="200px">
                                     </div>
                                     <div class="form-group">
-                                          <label for="ProPrice">Giá sản phẩm</label>
+                                          <label for="ProPrice">Giá sách</label>
                                           <input type="text" class="form-control" id="ProName" value="{{Price}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                          <label for="ProName">Tên sản phẩm</label>
+                                          <label for="ProName">Tên sách</label>
                                           <input type="text" class="form-control" id="ProName" value="{{ProName}}">
                                     </div>
                                     <div class="form-group">
-                                          <label for="ProPrice">Giá sản phẩm</label>
+                                          <label for="ProPrice">Giá sách</label>
                                           <input type="text" class="form-control" id="ProName" value="{{Price}}">
                                     </div>
                                 </div>
                           </div>
 
                           <div class="form-group">
-                                <label for="Des">Mô tả sản phẩm</label>
+                                <label for="Des">Mô tả sách</label>
                                 <textarea class="form-control" row = "5" id="Des" value="{{Des}}"></textarea>
                           </div>
                           
@@ -324,10 +324,10 @@
         <table class="table">
             <thead class="">
                 <tr>
-                    <th scope="col">Mã sản phẩm</th>
-                    <th scope="col">Tên sản phẩm</th>
-                    <th scope="col">Loại sản phẩm</th>
-                    <th scope="col">Nhà sản xuất</th>
+                    <th scope="col">Mã sách</th>
+                    <th scope="col">Tên sách</th>
+                    <th scope="col">Loại sách</th>
+                    <th scope="col">Nhà xuất bản</th>
                     <th scope="col">Số lượng</th>
                     <th scope="col">Giá bán</th>
                     <th scope="col">Lượt bán</th>

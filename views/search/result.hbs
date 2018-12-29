@@ -7,7 +7,7 @@
 
 <li class="dropdown">
 	<a href="#">
-		<i class="fas fa-bars"></i> Xem theo loại sản phẩm</a>
+		<i class="fas fa-bars"></i> Xem theo loại sách</a>
 	<div class="dropdown-content">
 		{{#each layoutVM.categories}}
 		<a href="/category/{{CatID}}">{{CatName}}</a>
@@ -16,7 +16,7 @@
 </li>
 <li class="dropdown">
 	<a href="#">
-		<i class="fas fa-bars"></i> Xem theo nhà sản xuất</a>
+		<i class="fas fa-bars"></i> Xem theo nhà xuất bản</a>
 	<div class="dropdown-content">
 		{{#each layoutVM2.producers}}
 		<a href="/producer/{{ProduID}}">{{ProduName}}</a>
@@ -33,29 +33,19 @@
 		<div class="col-md-8">
 			<div class="header-search">
 				<form method="POST" action="/search/advancesearch">
-				<h4>Hãng sản xuất</h4>
+				<h4>Nhà xuất bản</h4>
 					<select class="input-select" name="optionProdu">
 						<option value="all">Tất cả</option>
-						<option value="Asus">Laptop Asus</option>
-						<option value="Dell">Laptop Dell</option>
-						<option value="Mac">Laptop Macbook</option>
-						<option value="MSI">Laptop MSI</option>
+						{{#each layoutVM2.producers}}
+						<option value="{{ProduName}}">{{ProduName}}</option>
+						{{/each}}
 					</select>
-					<h4>Loại laptop</h4>
+					<h4>Loại sách</h4>
 					<select class="input-select" name="optionCat">
 						<option value="all">Tất cả</option>
-						<option value="Laptop Gaming">Lap Gaming</option>
-						<option value="Laptop Văn phòng">Lap Văn phòng</option>
-						<option value="Laptop Doanh nhân">Lap Doanh nhân</option>
-						<option value="Laptop Ultrabook">Lap Ultrabook</option>
-					</select>
-					<h4>Mức giá</h4>
-					<select class="input-select" name="optionPrice">
-						<option value="100000000">Tất cả</option>
-						<option value="20000000">10-20 triệu đồng</option>
-						<option value="30000000">20-30 triệu đồng</option>
-						<option value="40000000">30-40 triệu đồng</option>
-						<option value="50000000">40-50 triệu đồng</option>
+						{{#each layoutVM.categories}}
+						<option value="{{CatName}}">{{CatName}}</option>
+						{{/each}}
 					</select>
 					<button class="primary-btn order-submit" type="submit" style="margin-top:50px">Tìm kiếm</button>
 				</form>
@@ -75,7 +65,7 @@
 		<a href="/product/detail/{{ProID}}" target="blank">
 			<div class="product">
 				<div class="product-img">
-					<img src="/imgs/{{ProID}}/main.jpg" alt="">
+					<img src="/imgs/{{ProID}}/main_images.jpg" alt="">
 				</div>
 				<div class="product-body">
 					<p class="product-category">{{ProduName}}</p>

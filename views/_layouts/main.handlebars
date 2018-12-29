@@ -1,266 +1,293 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<link rel="icon" href="/imgs/logo.png" type="image/png" size="4x4" ">
+		<title>{{{_sections.title}}}</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="icon" href="/imgs/logo.png" type="image/png" size="8x8">
-    <title>{{{_sections.title}}}</title>
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-    <!-- 	<link type="text/css" rel="stylesheet" href="css/bootstrap4.css"/> -->
-    <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css" />
-    <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css" />
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/style.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/style1.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/style-dropdown.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> {{{_sections.css}}}
-</head>
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-<body>
-    <!-- HEADER -->
-    <header>
-        <!-- TOP HEADER -->
-        <div id="top-header">
-            <div class="container">
-                <ul class="header-links pull-left">
-                    <li><a href="#"><i class="fa fa-phone"></i> 0989 871 786</a></li>
-                    <li><a href="#"><i class="far fa-envelope"></i> laptopck@cklaptop.com.vn</a></li>
-                    <li><a href="https://goo.gl/4DYCsr" target="blank"><i class="fa fa-map-marker"></i> 227 Nguyễn Văn Cừ, phường 4, quận 5, TpHCM</a></li>
-                </ul>
-                <ul class="header-links pull-right">
-                    {{#if layoutVM.isLogged}}
-                    <li class="dropdown"><a href="#"><i class="fas fa-bars"></i>Tài khoản của {{layoutVM.curUser.f_Name}}</a>
-                        <div class="dropdown-account">
-                            <a href="/account/profile/{{layoutVM.curUser.f_ID}}">Thông tin cá nhân</a>
-                            <a href="/account/updateinfo/{{layoutVM.curUser.f_ID}}">Cập nhật thông tin cá nhân</a>
-                            <a href="/account/cart/{{layoutVM.curUser.f_ID}}">Giỏ hàng</a>
-                            <a href="/account/pay/{{layoutVM.curUser.f_ID}}">Thanh toán</a>
-                            <a href="/account/historypay/{{layoutVM.curUser.f_ID}}">Lịch sử mua hàng</a>
-                            <a id="lnkLogout" href="javascript:;">Đăng xuất</a>
-                        </div>
-                    </li>
-                    <form id="frmLogout" method="post" action="/account/logout"></form>
-                    {{else}}
-                    <li><a href="/account/login"><i class="far fa-user"></i>Đăng nhập</a></li>
-                    <li><a href="/account/register"><i class="fas fa-plus"></i>Đăng ký</a></li>
-                    {{/if}}
-                </ul>
-            </div>
-        </div>
-        <!-- /TOP HEADER -->
-        <!-- MAIN HEADER -->
-        <div id="header">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <!-- LOGO -->
-                    <div class="col-md-3">
-                        <div class="header-logo">
-                            <a href="/home" class="logo">
-									<img width = "80%" src="/imgs/logo.png" alt="">
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+		<!-- 	<link type="text/css" rel="stylesheet" href="css/bootstrap4.css"/> -->
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="/assets/css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="/assets/css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="/assets/css/style1.css">
+		<link type="text/css" rel="stylesheet" href="/assets/css/style-dropdown.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+		{{{_sections.css}}}
+		
+	</head>
+	<body>
+		
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header" style="background-color:#189EFF">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> 0989 871 786</a></li>
+						<li><a href="#"><i class="far fa-envelope"></i> hydro@gmail.com</a></li>
+						<li><a href="https://goo.gl/4DYCsr" target="blank"><i class="fa fa-map-marker"></i> 227 Nguyễn Văn Cừ, phường 4, quận 5, TpHCM</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						{{#if layoutVM.isLogged}}
+
+						
+
+							<li class="dropdown" ><a href="#"><i class="fas fa-bars"></i>Tài khoản của {{layoutVM.curUser.f_Name}}</a>
+								<div class="dropdown-account">
+									<a href="/account/profile/{{layoutVM.curUser.f_ID}}">Thông tin cá nhân</a>
+									<a href="/account/updateinfo/{{layoutVM.curUser.f_ID}}">Cập nhật thông tin cá nhân</a>
+									<a href="/account/cart/{{layoutVM.curUser.f_ID}}">Giỏ hàng</a>
+									<a href="/account/pay/{{layoutVM.curUser.f_ID}}">Thanh toán</a>
+									<a href="/account/historypay/{{layoutVM.curUser.f_ID}}">Lịch sử mua hàng</a>
+									<a id="lnkLogout" href="javascript:;">Đăng xuất</a>
+								</div>
+							</li>
+
+							<form id="frmLogout" method="post" action="/account/logout"></form>
+							
+							
+						{{else}}
+
+						<li><a href="/account/login"><i class="far fa-user"></i>Đăng nhập</a></li>
+						<li><a href="/account/register"><i class="fas fa-plus"></i>Đăng ký</a></li>
+						{{/if}}						
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header" style="background-color:#189EFF">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="/home" class="logo">
+									<img  src="/imgs/logo.png" alt="" width="120px" height="80px"/>
 								</a>
-                        </div>
-                    </div>
-                    <!-- /LOGO -->
-                    <!-- SEARCH BAR -->
-                    <div class="col-md-6">
-                        <div class="header-search">
-                            <form method="POST" action="/search/action">
-                                <select class="input-select" name="option">
-                                    <option value="0">Tên sản phẩm</option>
-                                    <option value="1">Loại sản phẩm</option>
-                                    <option value="2">Nhà sản xuất</option>
-                                </select>
-                                <input class="input" placeholder="Bạn đang tìm sản phẩm nào?" name="searchEle">
-                                <button class="search-btn" type="submit">Tìm kiếm</button>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- /SEARCH BAR -->
-                    <!-- ACCOUNT -->
-                    <div class="col-md-3 clearfix">
-                        <div class="header-ctn">
-                            <!-- Cart -->
-                            <div class="dropdown">
-                                {{#if layoutVM.isLogged}}
-                                <a href="/account/cart/{{layoutVM.curUser.f_ID}}">
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form method="POST" action="/search/action" >
+									<select class="input-select" name="option">
+										<option value="0">Tên sách</option>
+										<option value="1">Loại sách</option>
+										<option value="2">Nhà xuất bản</option>
+									</select>
+									<input class="input" placeholder="Bạn đang tìm sản phẩm nào?" name="searchEle">
+									<button class="search-btn" type="submit" >Tìm kiếm</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- Cart -->
+								<div class="dropdown">
+
+									{{#if layoutVM.isLogged}}
+										<a href="/account/cart/{{layoutVM.curUser.f_ID}}" >
 											<i class="fa fa-shopping-cart"></i>
 											<span>Giỏ hàng</span>
 											<div class="qty">{{layoutVM.cartSummary}}</div>
-										</a> {{else}}
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										</a>									
+									{{else}}
+
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Giỏ hàng</span>
 										<div class="qty">0</div>
-									</a> {{/if}}
-                            </div>
-                            <!-- /Cart -->
-                        </div>
-                    </div>
-                    <!-- /ACCOUNT -->
-                </div>
-                <!-- row -->
-            </div>
-            <!-- container -->
-        </div>
-        <!-- /MAIN HEADER -->
-    </header>
-    <!-- /HEADER -->
-    <!-- NAVIGATION -->
-    <nav id="navigation">
-        <!-- container -->
-        <div class="container">
-            <!-- responsive-nav -->
-            <div id="responsive-nav">
-                <!-- NAV -->
-                <ul class="main-nav nav navbar-nav">
-                    {{{_sections.nav}}}
-                </ul>
-                <!-- /NAV -->
-            </div>
-            <!-- /responsive-nav -->
-        </div>
-        <!-- /container -->
-    </nav>
-    <!-- /NAVIGATION -->
-    <!-- main carousel -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        {{{_sections.carousel}}}
-    </div>
-    <!-- end of carousel -->
-    {{{_sections.breadcrumb}}}
-    <!-- SECTION -->
-    <div class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                {{{_sections.login}}} {{{_sections.register}}} {{{_sections.title1}}} {{{_sections.title2}}} {{{_sections.title3}}}
-                <!-- ASIDE -->
-                <div id="aside" class="col-md-3">
-                    {{{_sections.bodyleft}}}
-                </div>
-                <!-- /ASIDE -->
-                <!-- STORE -->
-                <div id="store" class="col-md-9">
-                    {{{_sections.bodyright}}}
-                </div>
-                <!-- /STORE -->
-            </div>
-            <!-- /row -->
-            <div class="row">
-                {{{_sections.body}}} {{{body}}}
-            </div>
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /SECTION -->
-    <!-- FOOTER -->
-    <footer id="footer">
-        <!-- top footer -->
-        <div class="section">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">Về chúng tôi</h3>
-                            <p>Môn Lập trình ứng dụng Web - khoa Công nghệ Thông tin, trường Đại học Khoa học Tự nhiên - Đại học Quốc gia Tp. Hồ Chí Minh</p>
-                            <ul class="footer-links">
-                                <li><a href="#"><i class="fa fa-phone"></i> 0989 871 786</a></li>
-                                <li><a href="#"><i class="far fa-envelope"></i> laptopck@cklaptop.com.vn</a></li>
-                                <li><a href="https://goo.gl/4DYCsr" target="blank"><i class="fa fa-map-marker"></i> 227 Nguyễn Văn Cừ, phường 4, quận 5, TpHCM</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">Thông tin thành viên</h3>
-                            <ul class="footer-links">
-                                <li><a href="https://www.facebook.com/n.quangtinh13" target="blank">1512576 - Nguyễn Quang Tính</a></li>
-                                <li><a href="https://www.facebook.com/nachi.quoctrung" target="blank">1512609 - Hoàng Quốc Trung</a></li>
-                                <li><a href="https://www.facebook.com/nctrung1906" target="blank">1512613 - Nguyễn Chí Trung</a></li>
-                                <li><a href="https://www.facebook.com/bcmtung" target="blank">1512651 - Bùi Châu Minh Tùng</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="clearfix visible-xs"></div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">Tìm kiếm nhanh</h3>
-                            <ul class="footer-links">
-                                {{#each layoutVM2.producers}}
-                                <li><a href="/producer/{{ProduID}}">{{ProduName}}</a></li>
-                                {{/each}} {{#each layoutVM.categories}}
-                                <li><a href="/category/{{CatID}}">{{CatName}}</a></li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-xs-6">
-                        <div class="footer">
-                            <h3 class="footer-title">Dịch vụ</h3>
-                            <ul class="footer-links">
-                                <li><a href="#">Tài khoản của tôi</a></li>
-                                <li><a href="#">Xem giỏ hàng</a></li>
-                                <li><a href="#">Về đầu trang</a></li>
-                                <li><a href="/admin/login">Đến trang hệ thống</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row -->
-            </div>
-            <!-- /container -->
-        </div>
-        <!-- /top footer -->
-        <!-- bottom footer -->
-        <div id="bottom-footer" class="section">
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <span class="copyright">
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by Team
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</span>
-                    </div>
-                </div>
-                <!-- /row -->
-            </div>
-            <!-- /container -->
-        </div>
-        <!-- /bottom footer -->
-    </footer>
-    <!-- /FOOTER -->
-    <!-- jQuery Plugins -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/slick.min.js"></script>
-    <script src="/assets/js/nouislider.min.js"></script>
-    <script src="/assets/js/jquery.zoom.min.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
-    <script type="text/javascript">
-    $('#lnkLogout').on('click', function() {
-        $('#frmLogout').submit();
-    });
-    </script>
-    {{{_sections.js}}}
-</body>
+									</a> 
 
+									{{/if}}
+									
+								
+								</div>
+								<!-- /Cart -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+		
+		
+		<!-- NAVIGATION -->
+		<nav id="navigation" >
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						{{{_sections.nav}}}
+
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		<!-- main carousel -->
+		
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			{{{_sections.carousel}}}
+		</div>
+		<!-- end of carousel --> 
+		
+		{{{_sections.breadcrumb}}}
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					{{{_sections.login}}}
+
+					{{{_sections.register}}}
+
+					{{{_sections.title1}}}
+
+					{{{_sections.title2}}}
+					
+					{{{_sections.title3}}}
+
+					<!-- ASIDE -->
+					<div id="aside" class="col-md-3">
+						{{{_sections.bodyleft}}}
+					</div>
+					<!-- /ASIDE -->
+
+					<!-- STORE -->
+					<div id="store" class="col-md-9">
+						{{{_sections.bodyright}}}
+					</div>
+					<!-- /STORE -->
+					
+				</div>
+				<!-- /row -->
+				<div class="row">
+					{{{_sections.body}}}
+					{{{body}}}
+				</div>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- FOOTER -->
+		<footer id="footer" style="background-color:#189EFF">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-4 col-xs-4">
+							<div class="footer">
+								<h3 class="footer-title" style="color:white">Về chúng tôi</h3>
+								<p style="color:white">Khoa Công nghệ Thông tin, trường Đại học Khoa học Tự nhiên - Đại học Quốc gia Tp. Hồ Chí Minh</p>
+								<ul class="footer-links">
+									<li><a href="#" style="color:white"><i class="fa fa-phone"></i> 0989 871 786</a></li>
+									<li><a href="#" style="color:white"><i class="far fa-envelope"></i> hydro@gmail.com</a></li>
+									<li><a href="https://goo.gl/4DYCsr" target="blank" style="color:white"><i class="fa fa-map-marker"></i> 227 Nguyễn Văn Cừ, phường 4, quận 5, TpHCM</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<div class="footer" style="color:white">
+								<h3 class="footer-title" style="color:white">Thông tin thành viên</h3>
+								<ul class="footer-links">
+									<li><a href="#" style="color:white" >1512576 - Nguyễn Quang Tính</a></li>
+									<li><a href="#" style="color:white">1512613 - Nguyễn Chí Trung</a></li>
+									<li><a href="#" style="color:white">1512588 - Phạm Thị Minh Trang</a></li>
+									<li><a href="#" style="color:white">1612404 - Nguyễn Vĩ Nam</a></li>
+									<li><a href="#" style="color:white">1612328 - Nguyễn Thành Lân</a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="clearfix visible-xs"></div>
+						
+
+						<div class="col-md-4 col-xs-4">
+							<div class="footer">
+								<h3 class="footer-title" style="color:white">Dịch vụ</h3>
+								<ul class="footer-links" style="color:white">
+									<li><a href="#" style="color:white">Tài khoản của tôi</a></li>
+									<li><a href="#" style="color:white">Xem giỏ hàng</a></li>
+									<li><a href="#"style="color:white">Về đầu trang</a></li>
+									<li><a href="/admin/login" style="color:white">Đến trang hệ thống</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+			<!-- bottom footer -->
+	
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+
+		<!-- jQuery Plugins -->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/slick.min.js"></script>
+		<script src="/assets/js/nouislider.min.js"></script>
+		<script src="/assets/js/jquery.zoom.min.js"></script>
+		<script src="/assets/js/main.js"></script>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
+		<script type="text/javascript">
+			$('#lnkLogout').on('click', function() {
+				$('#frmLogout').submit();
+			});
+		</script>
+		{{{_sections.js}}}
+	</body>
 </html>

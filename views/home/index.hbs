@@ -1,5 +1,5 @@
 {{#section 'title'}}
-	CK Laptop - Uy tín - Chất lượng
+	Nhà sách Hydro
 {{/section}}
 {{#section 'js'}}
 	<script type="text/javascript">
@@ -15,14 +15,14 @@
 	<!-- NAV -->
 	<li class="active"><a href="/home"><i class="fas fa-home"></i> Trang chủ</a></li>
 		
-		<li class="dropdown"><a href="#"><i class="fas fa-bars"></i> Xem theo loại sản phẩm</a>
+		<li class="dropdown"><a href="#"><i class="fas fa-bars"></i> Xem theo loại sách</a>
 			<div class="dropdown-content">
 				{{#each layoutVM.categories}}
 				<a href="/category/{{CatID}}">{{CatName}}</a>			
 				{{/each}}
 			</div>
 		</li>
-		<li class="dropdown"><a href="#"><i class="fas fa-bars"></i> Xem theo nhà sản xuất</a>
+		<li class="dropdown"><a href="#"><i class="fas fa-bars"></i> Xem theo nhà xuất bản</a>
 			<div class="dropdown-content">
 				{{#each layoutVM2.producers}}
 				<a href="/producer/{{ProduID}}">{{ProduName}}</a>
@@ -31,8 +31,6 @@
 		</li>
 	<!-- /NAV -->
 {{/section}}
-
-
 
 {{#section 'carousel'}}
 	<ol class="carousel-indicators">
@@ -48,11 +46,11 @@
 			</div>
 
 			<div class="item">
-				<img width="100%" height="auto" src="/imgs/cover2.png" alt="Chicago">
+				<img width="100%" height="auto" src="/imgs/cover1.png" alt="Chicago">
 			</div>
 
 			<div class="item">
-				<img width="100%" height="auto" src="/imgs/cover1.png" alt="New York">
+				<img width="100%" height="50%" src="/imgs/cover3.png" alt="New York">
 			</div>
 		</div>
 {{/section}}
@@ -64,7 +62,7 @@
 	<!-- section title -->
 		<div class="col-md-12">
 			<div class="section-title">
-				<h3 class="title">SẢN PHẨM BÁN CHẠY NHẤT</h3>
+				<h3 class="title">SÁCH BÁN CHẠY NHẤT</h3>
 						
 			</div>
 		</div>
@@ -83,7 +81,7 @@
 							<div class="product">
 								<a href="/product/detail/{{ProID}}">
 									<div class="product-img">
-										<img src="/imgs/{{ProID}}/main.jpg" alt="">
+										<img src="/imgs/{{ProID}}/main_images.jpg" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">{{ProduName}}</p>
@@ -117,7 +115,7 @@
 	<!-- section title -->
 		<div class="col-md-12">
 			<div class="section-title">
-				<h3 class="title">SẢN PHẨM MỚI NHẤT</h3>
+				<h3 class="title">SÁCH MỚI NHẤT</h3>
 						
 			</div>
 		</div>
@@ -134,7 +132,7 @@
 						<div class="product">
 								<a href="/product/detail/{{ProID}}">
 									<div class="product-img">
-										<img src="/imgs/{{ProID}}/main.jpg" alt="">
+										<img src="/imgs/{{ProID}}/main_images.jpg" alt="">
 										<div class="product-label">
 											<span class="new">NEW</span>
 										</div>
@@ -170,7 +168,7 @@
 	<!-- section title -->
 		<div class="col-md-12">
 			<div class="section-title">
-				<h3 class="title">SẢN PHẨM ĐƯỢC XEM NHIỀU NHẤT</h3>
+				<h3 class="title">SÁCH ĐƯỢC XEM NHIỀU NHẤT</h3>
 						
 			</div>
 		</div>
@@ -188,7 +186,7 @@
 							<div class="product">
 								<a href="/product/detail/{{ProID}}">
 									<div class="product-img">
-										<img src="/imgs/{{ProID}}/main.jpg" alt="">
+										<img src="/imgs/{{ProID}}/main_images.jpg" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">{{ProduName}}</p>

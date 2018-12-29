@@ -27,7 +27,7 @@
 
 <li class="dropdown">
 	<a href="#">
-		<i class="fas fa-bars"></i> Xem theo loại sản phẩm</a>
+		<i class="fas fa-bars"></i> Xem theo loại sách</a>
 	<div class="dropdown-content">
 		{{#each layoutVM.categories}}
 		<a href="/category/{{CatID}}">{{CatName}}</a>
@@ -36,7 +36,7 @@
 </li>
 <li class="dropdown">
 	<a href="#">
-		<i class="fas fa-bars"></i> Xem theo nhà sản xuất</a>
+		<i class="fas fa-bars"></i> Xem theo nhà xuất bản</a>
 	<div class="dropdown-content">
 		{{#each layoutVM2.producers}}
 		<a href="/producer/{{ProduID}}">{{ProduName}}</a>
@@ -49,13 +49,13 @@
 <!-- aside Widget -->
 <div class="aside">
 	<div  style="margin-top:30px">
-		<h4>Hãng sản xuất</h4>
+		<h4>Nhà xuất bản</h4>
 		<ul class="list-group list-group-flush">
 		{{#each layoutVM2.producers}}
 			<a href="/producer/{{ProduID}}"><li class="list-group-item " style="border: none">{{ProduName}}</li></a>
 		{{/each}}
 		</ul>
-		<h4>Loại laptop</h4>
+		<h4>Loại sách</h4>
 		<ul class="list-group list-group-flush">
 		{{#each layoutVM.categories}}
 				<a href="/category/{{CatID}}"><li class="list-group-item" style="border: none">{{CatName}}</li></a>
@@ -75,7 +75,7 @@
 		<a href="/product/detail/{{ProID}}" target="blank">
 			<div class="product">
 				<div class="product-img">
-					<img src="/imgs/{{ProID}}/main.jpg" alt="">
+					<img src="/imgs/{{ProID}}/main_images.jpg" alt="">
 				</div>
 				<div class="product-body">
 					<p class="product-category">{{CatID}}</p>

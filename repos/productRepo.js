@@ -3,7 +3,6 @@ var config = require('../config/config');
 
 exports.loadAll = () => {
     var sql = 'select * from products';
-    
     return db.load(sql);
 }
 
@@ -31,6 +30,5 @@ exports.updateView = proId => {
     var sql = `update products 
     set Views=Views+1   
     where ProID = '${proId}' `;
-    console.log(sql);
     return db.load(sql);
 }
